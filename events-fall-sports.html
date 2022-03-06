@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/board.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/groups.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    <script src="scripts/events.js"></script>
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section-events flexbox flex-align-center groups" style="height: 100vw;">
+    
+       
+        <div id="evententry-container1">
+            <div>
+                <div class="event-description">
+                    <h1 class="big-title">Fall Sports Events</h1>
+                   <p class="event-body">
+                    CSA hosted an outing to Montaña de Oro State Park, which is famous for its beautiful hiking trails and beaches.
+                    Spending some time to unwind and take in these gorgeous views from the trails and beaches was a great way for members to
+                    bond and have a great time overall! Check out some photos from CSA’s time at the park below!<br><br>
+                    We also hosted a kayaking excursion for members to enjoy, another great way for members to get some fresh air
+                    and enjoy SLO’s beautiful surroundings! Life jackets, kayaks, and paddles were all taken care of, members had a great
+                    time going out with kayaks! Check out some photos from the kayaking trip below!<br><br>
+                   </p>
+                   <div class="event-image-column1">
+                        <img src="images/events/mdo1.jpg">
+                        <img src="images/events/mdo2.jpg">
+                        <img src="images/events/mdo3.jpg">
+                        <img src="images/events/mdo4.jpg">
+                   </div>
+                   <div class="event-image-column2">
+                        <img src="images/events/kayaking1.jpg">
+                        <img src="images/events/kayaking2.jpg">
+                        <img src="images/events/kayaking3.jpg">
+                   </div>
+                </div>
+             </div>
+
+        </section>
+        <div id="footer"></div>
+    
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/expanding-grid.js"></script>
+    </html>

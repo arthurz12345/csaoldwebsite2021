@@ -1,0 +1,381 @@
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.eventlist {
+   width: 320px;
+   position: absolute;
+   height: 1000px;
+   background-color: transparent;
+   left: 0;
+   z-index: 0;
+}
+
+.eventlist ul {
+   list-style-type: none;
+   background-color: white;
+   position: relative;
+   left: 0;
+   top: 100px;
+   width: 281px;
+}
+
+.eventlist ul li {
+   font-size: 24px;
+   background-color: white;
+   position: relative;
+   left: -40px;
+   border-left: solid rgb(47, 224, 160) 10px;
+   transition: background-color .5s, color .1s;
+   transition-timing-function: linear;
+   height: 50px;
+   width: 300px;
+   padding: 20px 0 0 10px;
+}
+
+.eventlist ul li:hover {
+   background-color: rgb(47, 224, 160) !important;
+   color: white !important;
+   cursor:pointer;
+}
+
+.quarter-divider {
+   position: relative;
+   font-size: 40px;
+   top: 100px;
+   text-align: right;
+   padding: 20px 0 5px 0;
+   background-color: white;
+}
+
+.event-select {
+    display: none;
+}
+
+.custom-select {
+    display: none;
+}
+
+#evententry-container1 {
+	width: 50%;
+	margin: 0 auto 0 auto;
+	position: relative;
+	height: 1200px;
+    display: inline-block;
+    z-index: 10;
+    
+}
+
+#evententry-container2 {
+	width: 50%;
+	margin: 0 auto 0 auto;
+	position: relative;
+	height: 5200px;
+    display: none;
+    z-index: 10;
+    background: white;
+}
+
+[id^="evententry-container"] {
+    max-width: 900px;
+}
+
+.event-title {
+	width: 100%;
+	position: absolute;
+    /* font-size: min(60px, max(4vw, 20px)); */
+    font-size: 1.7em;
+	height: 96px;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+    background-color: #FDF7E0;
+    margin-bottom: 20px;
+}
+
+.event-title p {
+	position: relative;
+	top: 10px;
+    
+}
+
+.events-calendar{
+    text-align: center;
+    width: 850px;
+    height: 500px;
+    padding: 20px 20px;
+    /* background-color: #B5381C; */
+}
+
+.event-calendar-title{
+    text-align: center;
+    color: #B5381C;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+
+.event-description {
+	width: 100%;
+	position: absolute;
+	padding: 0 0 0 0px;
+	left: 0px;
+	font-size: min(4vw, 20px);
+    top: max(5vw, 30px);
+    /* height: 100px; */
+    text-align: left;
+    background-color: #FDF7E0;
+    padding-top: 50px;
+    line-height: 28px;
+    /* height: 1800px; */
+}
+
+.event-body {
+    font-family: "proxima-nova", sans-serif;
+    
+}
+
+#event-description-subtitle {
+   font-size: 40px;
+}
+
+.event-image-column1 {
+	position: absolute;
+	left: 0px;
+	width: 49.5%;
+    height: 1000px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    
+
+}
+
+.event-image-column1 img {
+   width: 100%;
+}
+
+.event-image-column2 {
+	position: absolute;
+	right: 0;
+	width: 49.5%;
+    ;
+    margin-left: 20px;
+}
+
+.event-image-column2 img {
+   width: 100%;
+}
+
+.event-image-column3 {
+	position: absolute;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.event-image-column3 img {
+    position: relative;
+    left: 0px;
+	width: 100%;
+}
+
+#eventTitle0, #event0 {
+	display: block;    
+}
+
+.big-title{
+    line-height: 80px;
+    margin-bottom: 20px;
+}
+
+#li0 {
+	background-color: rgb(47, 224, 160);
+	color: white;
+}
+
+[id^="event"] {
+	display: none;
+}
+
+#events-page-calendar {
+	width: 700px;
+}
+
+#evententry-container iframe {
+   width: 100%;
+}
+
+@media screen and (max-width: 1120px){
+
+    .event-title{
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1400px) {
+    .eventlist {
+        display: none;
+    }
+    
+    /* styles for dropdown select */
+    /* The container must be positioned relative: */
+    .custom-select {
+        display: inline-block;
+        position: relative;
+        font-family: Arial;
+        font-size: 30px;
+        margin-bottom: 10px;
+        padding-right: 220px;
+    }
+    
+    .custom-select select {
+        display: none; /*hide original SELECT element: */
+    }
+    
+    .select-selected {
+        background-color: rgb(47, 224, 160);
+    }
+    
+    /* Style the arrow inside the select element: */
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: white transparent transparent transparent;
+    }
+    
+    /* Point the arrow upwards when the select box is open (active): */
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent white transparent;
+        top: 7px;
+    }
+    
+    /* style the items (options), including the selected item: */
+    .select-items div,.select-selected {
+        color: #ffffff;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        width: 387px;
+    }
+    
+    /* Style items (options): */
+    .select-items {
+        position: absolute;
+        background-color: rgb(145, 243, 207);
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    
+    /* Hide the items when the select box is closed: */
+    .select-hide {
+        display: none;
+    }
+    
+    .select-items div:hover, .same-as-selected {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    [id^="evententry-container"] {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .custom-select {
+        font-size: 18px;
+        padding-right: 94px;
+    }
+
+    .select-items div,.select-selected {
+        width: 260px;
+    }
+
+    .event-title {
+        width: 80%;
+        font-size: min(8vw, 20px);
+    }
+
+    #evententry-container1 {
+        height: 1300px;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #evententry-container2 {
+        height: 2200px;
+    }
+
+    [id^="evententry-container"] {
+        padding: 70px;
+    }
+
+    iframe {
+        width: 90%;
+        height: 100vw;
+    }
+
+    .events-calendar{
+        width: 90%;
+        margin-left: -5%;
+        height: 40vw;   
+    }
+    .event-description{
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+.event-body{
+    width: 90%;
+}
+
+}
+
+@media screen and (max-width: 407px) {
+    .big-title{
+        line-height: 20vw;
+        width: 90%;
+    }
+    
+    }
+
+
+.social-media {
+    z-index: 100;
+}
+.info-section-events {        
+    flex-direction: column;
+    justify-content: top;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    background: no-repeat bottom center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #B5381C;
+    height: 100vw;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+.info-section-events h1{
+    font-size: 2em;
+    text-align: center;
+    margin-top: -30px;
+}

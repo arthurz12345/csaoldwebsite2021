@@ -1,0 +1,128 @@
+<style>
+
+    .dropbtn {
+        background-color: #FDF7E0;
+      color: #B5381C;
+      padding: 0;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #B5381C;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      line-height: 20px;
+      margin-top: -20px;
+      margin-left: 0px;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+    
+    .dropdown-content a {
+      color: #FDF7E0;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {
+        font-weight: bold;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+
+      font-weight: bold;
+    }
+
+    .bold-font {
+      font-weight: bold !important;
+    }
+
+    </style>
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <script>
+        // highlight active menu
+        var currentPath = window.location.pathname;
+        console.log(currentPath);
+        removeBold();
+        if (currentPath.indexOf('index')>=0)
+            document.getElementById("navbar-home").classList.add("bold-font");
+        else if (currentPath.indexOf('events') >= 0)
+            document.getElementById("navbar-events").classList.add("bold-font");
+        else if (currentPath.indexOf('groups') >= 0)
+            document.getElementById("navbar-groups").classList.add("bold-font");    
+        else if (currentPath.indexOf('families') >= 0)
+            document.getElementById("navbar-families").classList.add("bold-font");    
+        else if (currentPath.indexOf('board') >= 0)
+            document.getElementById("navbar-board").classList.add("bold-font");
+        else if (currentPath.indexOf('contact') >= 0)
+            document.getElementById("navbar-contact").classList.add("bold-font");
+            
+
+        function removeBold(){
+            document.getElementById("navbar-home").classList.remove("bold-font");
+            document.getElementById("navbar-events").classList.remove("bold-font");
+            document.getElementById("navbar-groups").classList.remove("bold-font");
+            document.getElementById("navbar-families").classList.remove("bold-font");
+            document.getElementById("navbar-board").classList.remove("bold-font");
+            document.getElementById("navbar-contact").classList.remove("bold-font");
+            
+        }
+    </script>
+
+<div class="logo">
+    <a href="index.html">
+        <img src="images/panda-head.png"/>
+    </a>
+</div>
+
+
+<div class="navbar-menu" style="border: #B5381C; border-width: 10px;">
+        <a class="nav-link" id="navbar-home" href="index.html" style="line-height: 10px;">Home</a>
+        <a class="nav-link" id="navbar-home" href="/cnyb_flyer.pdf" target="_blank" style="line-height: 10px;">CNYB</a>
+        <div class="dropdown">
+            <a class="dropbtn nav-link" id="navbar-events" href="events.html" style="font-size: 100%;">Events</a>
+            <div class="dropdown-content">
+              <a href="events.html">About CSA Events</a>
+              <a href="events-general-meetings.html">General Meetings</a>
+              <a href="events-bonfire.html">Meet & Greet Bonfire</a>
+              <a href="events-ultraman.html">Ultraman</a>
+              <a href="events-revealing.html">Revealing</a>
+              <a href="events-tbanq.html">Thanksgiving Banquet</a>
+              <a href="events-culturefest.html">CultureFest</a>
+              <a href="events-white-elephant.html">White Elephant</a>
+              <a href="events-fall-sports.html">Fall Sports Events</a>
+            </div>
+          </div>
+        <a class="nav-link" id="navbar-groups" href="groups.html" >Groups</a>
+        <div class="dropdown">
+          <a class="dropbtn nav-link" id="navbar-families" href="families.html" style="font-size: 100%;">Fams</a>
+          <div class="dropdown-content">
+            <a href="families-ballin.html">Ballin'</a>
+            <a href="families-chin-dynasty.html">Chin Dynasty</a>
+            <a href="families-funline.html">Funline</a>
+            <a href="families-rrr.html">RRR</a>
+            <a href="families-yip.html">Yip Dynasty</a>
+            <a href="families-pan-yu.html">Pan Yu</a>
+            <a href="families-ohana.html">Ohana</a>
+            <a href="families-huynners.html">Huynners</a>
+          </div>
+        </div>
+        <a class="nav-link" id="navbar-board" href="board.html" style="line-height: 10px;">Board</a>
+        <a class="nav-link" id="navbar-contact" href="contact.html" style="line-height: 10px; width: auto;">Contact</a>
+</div>

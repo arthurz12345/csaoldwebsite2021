@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/board.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+	<!-- Start: Dynamically load header and footer-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$("#navbar").load("include/header.html"); 
+			$("#footer").load("include/footer.html"); 
+		});
+	</script>
+	<!--End-->
+</head>
+<body>
+	<nav id="navbar">
+        
+    </nav>
+
+    <section class="board-section">
+        <div class="spacer"></div>
+        <div id="board-module" class="board-module-container">
+            <div class="page-title">Meet Our Board</div>
+
+            <div class="board-member-container">
+                <img width="90%" src="images/board/jordan.jpg" />
+                <div style="width: 100%; font-size: 1.5em;" >
+                    <h3 style="margin-top: 10px;">Jordan Chew</h3>
+                    <p class="title">President</p>
+                    <p class="major-year"> Computer Science, 3rd Year </p>
+                </div>
+                <div class="board-info">
+                    <p><b>Hometown: </b>Cupertino, CA</p>
+                    <p><b>Hobbies: </b>Cooking, Baking, Dancing, Playing Video Games, Playing D&D, Dyeing Hair</p>
+                    <p><b>Obsessions: </b>Organizing, Phở, improving Efficiency, Good Food, Cookware, Being Frugal</p>
+                    <p><b>Fun Fact: </b>I have three scars from biking</p>
+                    <p><b>Other Cal Poly Involvements: </b>White Hat aka CPSEC, SLO Breakers, Archery, Lion Dance, KASA, Honors Program</p>
+                    <p><b>Favorite thing about CSA: </b>CSA has some of the kindest and most wholesome people I've ever met, and I really enjoy the community. I also enjoy sharing my experiences with Chinese culture and being able to continue celebrate everyone's experiences with Chinese culture.</p>
+                </div>
+            </div>
+          
+           
+
+ 
+    </section>
+
+    <div id="footer"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/expanding-grid.js"></script>
+</html>

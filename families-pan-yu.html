@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/fams.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section flexbox flex-align-center groups" style="margin-bottom: 3%; width: 90%; max-height: 3000px;">
+        <div class="spacer"></div>
+       
+        <div id="fam-container1">
+            <div id="event0">
+                <div class="fam-title">
+                    <h1>Pan Yu</h1>
+                </div>
+                <div class="fam-description">
+                  <p>
+                    Pan Yu is a chill and laidback fam! As one of the smaller families, we enjoy cozy and social gatherings usually while enjoying food together, including hotpot and kbbq. Overall, Pan Yu is a fam of good vibes. Anybody who's interested in joining a more lowkey fam and getting to know our members more personally is welcome in Pan Yu!                  
+                    <br><br>
+                    </p>
+                   <div >
+                      <img src="images/Families/panyu.jpg" width="90%" height="auto" class="fam-pic"></img>
+                   </div>
+                   
+            </div>
+            </div>
+            </div>
+          
+    </section>
+    
+    <section class="info-section-fams flexbox flex-align-center groups">
+        <div> </div>
+        <div style="position:relative">
+            <h1 class="meet-fam-heads">Meet the Fam Heads!</h1>
+        </div>
+        <div class="spacer"></div>
+        <div class="flex-container">
+            <h3 class="fam-head-name">
+                Jeremy Szeto
+            </h3>
+
+        <div class="fam-head-info-section">
+        <div class="fam-head-picture">
+            <img src="images/fam-heads/jeremy.jpg">
+        </div>
+        <div>
+            <br><br><br>
+            <p class="fam-head-description">
+                Hi! I’m Jeremy - a fourth year Computer Engineering major from the Sacramento area. In my free time I like to go hammocking and hiking with friends. Fun fact: I’ve been playing the piano for almost 15 years!            
+            </p>
+        </div>
+        </div>
+    </div>
+        
+    <div class="flex-container">
+        <h3 class="fam-head-name">
+            Amanda Chang
+            </h3>
+
+        <div class="fam-head-info-section">
+            <div class="fam-head-picture">
+                <img src="images/fam-heads/amanda.jpg">
+            </div>
+            <div>
+                <br><br><br>
+                <p class="fam-head-description">
+                    Hello! I'm Amanda Chang (she/her/hers), an Animal Science Major on the Pre-Vet track from Orange County. You'll often find me in the MCC (Room 111F in the UU, next to the craft center) working on events or just hanging out! Other than that, I love cooking and planning get-togethers: PanYu better be ready for more food socials!                
+                </p>
+            </div>
+            </div>
+    </div>
+    </section>
+    <div id="footer"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/expanding-grid.js"></script>
+</html>

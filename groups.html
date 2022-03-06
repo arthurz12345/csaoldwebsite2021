@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/groups.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+     <!-- Start: Dynamically load header and footer-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>
+         $(function(){
+           $("#navbar").load("include/header.html"); 
+           $("#footer").load("include/footer.html"); 
+         });
+     </script> 
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <section class="info-section flexbox flex-align-center groups">
+        <div class="spacer"></div>
+        <div class="page-title">Performance Groups</div>
+        <div class="spacer"></div>
+        <div class="white-box info-content-box">
+               <div class="title">Lion Dance Team</div>
+            <img src="images/groups/ldt.jpg">
+            <div class="information">
+                <p class="event-body"><b>About: </b>LDT is a non-audition lion dance team. We are the only group on the central coast and we perform for event inside Cal Poly as well as bless restaurants, temples and weddings outside of Cal Poly. No experience required.</p>
+                <br>
+                <a class ='exlink' target="_blank" style = "color: black; text-decoration: none" href = "https://www.calpolyldt.com/">
+                <p class="event-body">Click here to check out the official LDT website!</p></a>
+                <br>
+                <p class="event-body"><b>Practices: </b>Saturdays 10AM-12PM behind the music building</p>
+            </div>
+        </div>
+        <div class="info-section flexbox flex-align-center tok">
+            <div class="white-box info-content-box" style="height: fit-content;">
+                <div class="title">Take Out Kidz</div>
+                <img src="images/groups/tok.jpg">
+                <div class="information">
+                    <p class="event-body"><b>About: </b>Take Out Kidz is a non-audition dance group that performs at school and CSA events such as Culture Fest and Chinese New Year Banquet. The choreographies usually involve a mix of hip-hop, urban, contemporary, and jazz. We are a family for anyone who wishes to learn to dance, create new dance, and, most importantly, have fun!</p>
+                    <br>
+
+                <a class ='exlink' target="_blank" style = "color: black; text-decoration: none" href = "https://www.youtube.com/playlist?list=PLWlSHI5Fy99_r-e4Cg9kwLINl6USLMsRm">
+                <p class="event-body">Click here to check out TOK's past performances!</p></a>
+                <br>
+                    <p class="event-body"><b>Practices: </b>Wednesdays 6-8 PM in PAC parking lot, Fridays and Sundays 5-7 PM in Rec Center Studio 3</p>
+                </div>
+            </div>
+        <div class="white-box info-content-box">
+            <div class="title">Harmonics</div>
+            <img src="images/groups/variations.jpg">
+            <div class="information">
+                <p class="event-body"><b>About: </b>Harmonics is a non audition acapella group with everyone from beatboxers, drummers, and people who just simply like to sing.</p>
+                <br>
+                <a class ='exlink' target="_blank" style = "color: black; text-decoration: none" href = "https://www.youtube.com/playlist?list=PLWlSHI5Fy99_r-e4Cg9kwLINl6USLMsRm">
+                <p class="event-body">Check out Harmonics' past performances!</p></a>
+                <br>
+                <p class="event-body"><b>Practices: </b> Thursdays at 6-7PM in Baker 113</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+</html>

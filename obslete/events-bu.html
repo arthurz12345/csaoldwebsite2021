@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/board.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/groups.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    <script src="scripts/events.js"></script>
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section flexbox flex-align-center groups">
+        <div class="spacer"></div>
+        <div class="custom-select" style="width:200px;"
+            style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+            unselectable="on"
+            onselectstart="return false;" 
+            onmousedown="return false;">
+            <form autocomplete="off">
+                <select onchange="showEvent(this.value, 0)">
+                    <option value="0">Select event:</option>
+                    <option value="1">About CSA Events</option>
+                    <option value="2">CSA General Meetings</option>
+                    <option value="3">Senior Shoutouts</option>
+                    <option value="4">Online Events</option>
+                    <option value="5">Winter Formal</option>
+                    <option value="6">Chinese New Year Banquet</option>
+                    <option value="7">Winter Sports Events</option>
+                    <option value="8">Winter Retreat</option>
+                    <option value="9">Hotpot Night</option>
+                    <option value="10">White Elephant</option>
+                    <option value="11">Thanksgiving Banquet</option>
+                    <option value="12">Bigs/Littles and Revealing</option>
+                    <option value="13">Fall Sports Events</option>
+                    <option value="14">CultureFest</option>
+                    <option value="15">Ultraman</option>
+                    <option value="16">Meet & Greet and Bonfire</option>
+                </select>
+            </form>
+        </div>
+        <!-- script for dropdown select menu -->
+        <script>
+            var x, i, j, l, ll, selElmnt, a, b, c;
+            /* Look for any elements with the class "custom-select": */
+            x = document.getElementsByClassName("custom-select");
+            l = x.length;
+            for (i = 0; i < l; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            ll = selElmnt.length;
+            /* For each element, create a new DIV that will act as the selected item: */
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+            /* For each element, create a new DIV that will contain the option list: */
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 1; j < ll; j++) {
+                /* For each option in the original select element,
+                create a new DIV that will act as an option item: */
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                c.addEventListener("click", function(e) {
+                    /* When an item is clicked, update the original select box,
+                    and the selected item: */
+                    var y, i, k, s, h, sl, yl;
+                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    sl = s.length;
+                    h = this.parentNode.previousSibling;
+                    for (i = 0; i < sl; i++) {
+                        if (s.options[i].innerHTML == this.innerHTML) {
+                            s.selectedIndex = i;
+                            h.innerHTML = this.innerHTML;
+                            y = this.parentNode.getElementsByClassName("same-as-selected");
+                            yl = y.length;
+                            for (k = 0; k < yl; k++) {
+                                y[k].removeAttribute("class");
+                            }
+                            this.setAttribute("class", "same-as-selected");
+                            showEvent(i-1);
+                            break;
+                        }
+                    }
+                    h.click();
+                });
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function(e) {
+                /* When the select box is clicked, close any other select boxes,
+                and open/close the current select box: */
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+            }
+
+            function closeAllSelect(elmnt) {
+            /* A function that will close all select boxes in the document,
+            except the current select box: */
+            var x, y, i, xl, yl, arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            xl = x.length;
+            yl = y.length;
+            for (i = 0; i < yl; i++) {
+                if (elmnt == y[i]) {
+                arrNo.push(i)
+                } else {
+                y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < xl; i++) {
+                if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+                }
+            }
+            }
+            /* If the user clicks anywhere outside the select box,
+            then close all select boxes: */
+            document.addEventListener("click", closeAllSelect); 
+        </script>
+        <div class="eventlist">
+            <ul>
+                <li id="li0" onclick="showEvent(0, 1)">About CSA Events</li>
+                <li id="li1" onclick="showEvent(1, 1)">CSA General Meetings</li>
+            </ul>
+            <div class="quarter-divider">
+                <p>Spring 2020</p>
+            </div>
+            <ul>
+                <li id="li2" onclick="showEvent(2, 1)">Senior Shoutouts</li>
+                <li id="li3" onclick="showEvent(3, 1)">Online Events</li>
+            </ul>
+            <div class="quarter-divider">
+                <p>Winter 2020</p>
+            </div>
+            <ul>
+                <li id="li4" onclick="showEvent(4, 1)">Winter Formal</li>
+                <li id="li5" onclick="showEvent(5, 1)">Chinese New Year Banquet</li>
+                <li id="li6" onclick="showEvent(6, 1)">Winter Sports Events</li>
+                <li id="li7" onclick="showEvent(7, 1)">Winter Retreat</li>
+                <li id="li8" onclick="showEvent(8, 1)">Hotpot Night</li>
+            </ul>
+            <div class="quarter-divider">
+                <p>Fall 2019</p>
+            </div>
+            <ul>
+                <li id="li9" onclick="showEvent(9, 1)">White Elephant</li>
+                <li id="li10" onclick="showEvent(10, 1)">Thanksgiving Banquet</li>
+                <li id="li11" onclick="showEvent(11, 1)">Bigs/Littles and Revealing</li>
+                <li id="li12" onclick="showEvent(12, 1)">Fall Sports Events</li>
+                <li id="li13" onclick="showEvent(13, 1)">CultureFest</li>
+                <li id="li14" onclick="showEvent(14, 1)">Ultraman</li>
+                <li id="li15" onclick="showEvent(15, 1)">Meet & Greet and Bonfire</li>
+            </ul>
+        </div>
+        <div id="evententry-container1">
+            <div id="event0">
+                <div class="event-title" id="eventTitle0">
+                    <p>About CSA Events</p>
+                </div>
+                <div class="event-description">
+                  <p class="event-body">
+                  &emsp;&emsp;CSA has plenty of events year-round for all of our members to take part in! From holiday celebration events
+                     to the chaotic Big/Little program to casual weekend events, CSA will always have something going on almost every week.<br><br>
+                  &emsp;&emsp;There are so many events that CSA offers that we are sure that you will find something that you’ll like.
+                     Our events are great ways to make friends and connect with people in CSA!<br><br>
+                  &emsp;&emsp;To learn more about our past events, check them out via the sidebar on the left. Also, check out our "What is CSA?" video and see
+                     the calendar below to view our upcoming events and schedule! We hope that you find something that you’ll enjoy and we hope to see you at
+                     future events soon! :)<br><br>
+                    </p>
+                     <iframe width="100%" height="25%" src="https://www.youtube.com/embed/L2TecRuwUQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     <br><br>
+                     <iframe src="https://calendar.google.com/calendar/embed?src=spjkdclc5lnqu6h7588jgaf3ts%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+                        style="border: 0" width="100%" height="25%" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+
+            <div id="event1">
+                <div class="event-title">
+                    <p>CSA General Meetings</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                    &emsp;&emsp;CSA has general meetings every Tuesday at 8 pm! Anybody is welcome to attend our meetings, so come out and have a good time!<br><br>
+                    &emsp;&emsp;At general meetings, we keep you up to date with CSA’s upcoming events, we play fun icebreaker games that anyone can participate in, and more! General meetings are also a great way to meet new people in the club and to get hyped for things that are in store for the club in the coming weeks!<br><br>
+                    &emsp;&emsp;Check out these photos of some of our past general meetings!<br><br>
+                    </p>
+                    <div class="event-image-column1">
+                        <img src="images/events/generalmeeting1.jpg"/>
+                        <img src="images/events/generalmeeting2.jpg"/>
+                        <img src="images/events/generalmeeting3.jpg"/>
+                        <img src="images/events/generalmeeting4.jpg"/>
+                    </div>
+                    <div class="event-image-column2">
+                        <img src="images/events/generalmeeting5.jpg"/>
+                        <img src="images/events/generalmeeting6.jpg"/>
+                        <img src="images/events/generalmeeting7.jpg"/>
+                        <img src="images/events/generalmeeting8.jpg"/>
+                    </div>
+                </div>
+            </div>
+
+            <div id="event2">
+                <div class="event-title">
+                    <p>Senior Shoutouts</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                     &emsp;CSA hosts an annual banquet to commemorate and honor the graduating seniors of our organization who have
+                     touched all of our lives in a meaningful way during their time with CSA. Unfortunately, due to the preexisting
+                     circumstances of this year, we were not able to hold this banquet.<br><br>
+                     &emsp;However, this would not stop us from celebrating the time that we have spent with our seniors! To end the
+                        Spring quarter and ultimately the 2019-2020 school year for CSA, we hosted a live watch party of a compilation of
+                        shoutouts from CSA members for this year’s seniors!<br><br>
+                     &emsp;Check it out in the video below!<br><br>
+                    </p>
+                        <iframe width="100%" height="25%" src="https://www.youtube.com/embed/e9H0z7FhwwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div id="event3">
+                <div class="event-title">
+                    <p>Online Events</p>
+                </div>
+                <div class="event-description">
+                     <p>
+                        <br>&emsp;&emsp;Quarantine may keep CSA members apart physically, but it couldn't stop us from bonding over some virtual events!
+                           Read a bit about ways that we stayed connected together online and from our homes!
+                     <br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Dalgona Coffee Making
+                     </p>
+                     <p>
+                        &emsp;&emsp;Who doesn’t love Dalgona coffee? CSA members grabbed their whisks and tuned into a Zoom call to make
+                           Dalgona coffee with step-by-step instruction by CSA! The activity went great,
+                           and everybody who participated learned how to make this simple and trendy treat for themselves at home!<br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Quarantine Workout Session
+                     </p>
+                     <p>
+                        &emsp;&emsp;Even though all of the gyms have closed down, that doesn’t mean that we can’t stay fit with home workouts!
+                           In order to stay on that fitness grind, CSA members joined a Zoom call to learn some workouts with CSA! This exercise
+                           session taught members how to keep active, even during quarantine!<br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        APIDA Open Mic Night
+                     </p>
+                     <p>
+                        &emsp;&emsp;To celebrate Asian and Pacific Islander American Heritage Month, CSA participated in an open mic night, hosted
+                           by Cal Poly’s Pilipino Cultural Exchange! Members from a number of Cal Poly’s cultural organizations (PCE, CSA, ISA, KASA,
+                           JSA, TVSA, and more) put on a show of performances for a live audience of over 100 people online over Zoom! These performances
+                           showcased a wide variety of talent and cultural expressions from Cal Poly students’ diverse cultures and backgrounds.<br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Game Night with EPIC
+                     </p>
+                     <p>
+                        &emsp;&emsp;CSA hosted a virtual game night in collaboration with Cal Poly’s EPIC (Engineering Possibilities in College)!
+                           This event brought members from both organizations together to play a number of games, including Monopoly, UNO, and more from
+                           our own homes! <a target="_blank" href="https://epic.calpoly.edu/">You can find out more about EPIC here!</a><br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Cooking Pad Thai
+                     </p>
+                     <p>
+                        &emsp;&emsp;Have you ever wanted to learn how to cook dishes from your favorite Thai restaurant? CSA hosted a cooking event where
+                           members could follow live instructions for preparing and cooking a popular Thai noodle dish, Pad Thai!  This dish was voted to
+                           be chosen for this cooking event as a favorite among CSA from a number of dishes from various ethnic backgrounds.<br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Big's Appreciation Week
+                     </p>
+                     <p>
+                        &emsp;&emsp;Every year, CSA hosts a week full of themes and activities in which Littles (see the "Bigs/Littles and Revealing" tab for more information!)
+                           perform tasks and give gifts for their Bigs to show their appreciation for their Bigs! This year, CSA’s Social Chairs organized a
+                           virtual Big’s Appreciation Week which included fun activities such as making memes for Bigs and watching movies or playing video
+                           games with Bigs!<br><br><br>
+                     </p>
+                    <div class="event-image-column1">
+                    </div>
+                    <div class="event-image-column2">
+                    </div>
+                </div>
+            </div>
+
+            <div id="event4">
+                <div class="event-title">
+                    <p>Winter Formal</p>
+                </div>
+                <div class="event-description">
+                  <p>&emsp;&emsp;Winter Formal is a fun night for members to get together with friends at a special venue off-campus!
+                        With great music, decorations, and a photo booth, the Winter Formal is a fun time for everyone to dance the
+                        night away and have a great time with good vibes.<br><br>
+                     &emsp;&emsp;Check out the promo video and photos from this year’s Winter Formal below!<br><br>
+                  </p>
+                     
+                  <iframe width="100%" height="25%" src="https://www.youtube.com/embed/Vhv0P_YSDdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <div class="event-image-column3">
+                     <img src="images/events/formal3.jpg">
+                     <img src="images/events/formal1.jpg">
+                     <img src="images/events/formal2.jpg">
+                  </div>
+                </div>
+            </div>
+
+            <div id="event6">
+                <div class="event-title">
+                    <p>Winter Sports Events</p>
+                </div>
+                <div class="event-description">
+                  <p id="event-description-subtitle">
+                     Souperbowl
+                  </p>
+                  <p>
+                     &emsp;&emsp;CSA participated in the annual Souperbowl, a friendly competition between cultural clubs that includes several
+                        rounds of games of different sports. Check out some photos of our basketball game against PCE below!
+                     <br><br><br>
+                  </p>
+                  <p id="event-description-subtitle">
+                     Tennis Social
+                  </p>
+                  <p>
+                     &emsp;&emsp;CSA hosted a tennis social, where members could come out on a sunny day and enjoy some great games of tennis with
+                        friends! Check out the photos from our members playing tennis below!
+                     <br><br><br>
+                  </p>
+                  <div class="event-image-column1">
+                     <img src="images/events/souperbowl1.jpg"/>
+                     <img src="images/events/souperbowl2.jpg"/>
+                     <img src="images/events/souperbowl3.jpg"/>
+                  </div>
+                  <div class="event-image-column2">
+                     <img src="images/events/tennis1.jpg"/>
+                     <img src="images/events/tennis2.jpg"/>
+                     <img src="images/events/tennis3.jpg"/>
+                  </div>
+                </div>
+            </div>
+
+            <div id="event7">
+                <div class="event-title">
+                    <p>Winter Retreat</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                        &emsp;&emsp;Need a break from exams? CSA hosted a Winter Retreat in order to provide members with a weekend of rest and relaxation.
+                           Members got to spend time with friends at the beach and spend the night at an Airbnb with each other and good vibes, making for
+                           a nice respite from the stress of Winter quarter midterms.<br><br>
+                        &emsp;&emsp;Check out some photos from the retreat below!<br><br>
+                    </p>
+                    <div class="event-image-column1">
+                       <img src="images/events/retreat4.jpg">
+                       <img src="images/events/retreat6.jpg">
+                    </div>
+                    <div class="event-image-column2">
+                     <img src="images/events/retreat2.jpg">
+                     <img src="images/events/retreat1.jpg">
+                     <img src="images/events/retreat3.jpg">
+                     <img src="images/events/retreat5.jpg">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="event8">
+               <div class="event-title">
+                  <p>Hotpot Night</p>
+               </div>
+               <div class="event-description">
+                    <p>
+                        &emsp;&emsp;What would be a better way to beat the Winter cold than with a warm night of hotpot? CSA hosted a hotpot night,
+                           where members were provided with hotpot ingredients and necessary cooking tools to make for a warm night of fun and good food.
+                           Everybody got to eat good food and have a good time with friends!<br><br>
+                        &emsp;&emsp;Check out photos from the hotpot night below!<br><br>
+                    </p>
+                     <div class="event-image-column1">
+                        <img src="images/events/hotpot1.jpg">
+                        <img src="images/events/hotpot2.jpg">
+                        <img src="images/events/hotpot3.jpg">
+                     </div>
+                     <div class="event-image-column2">
+                        <img src="images/events/hotpot4.jpg">
+                        <img src="images/events/hotpot5.jpg">
+                        <img src="images/events/hotpot6.jpg">
+                     </div>
+               </div>
+            </div>
+
+            <div id="event9">
+                <div class="event-title">
+                    <p>White Elephant</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                       &emsp;&emsp;CSA hosted a White Elephant gift exchange, which is a game for the holiday season in which players open, steal,
+                        and trade random gifts that other members have anonymously contributed. The game usually ends with a ton of betrayal and laughter, and
+                        this was no exception!<br><br>
+                        &emsp;&emsp;Check out photos from the white elephant exchange below!<br><br>
+                    </p>
+                    <div class="event-image-column1">
+                        <img src="images/events/whiteElephant1.jpg">
+                        <img src="images/events/whiteElephant2.jpg">
+                        <img src="images/events/whiteElephant3.jpg">
+                    </div>
+                    <div class="event-image-column2">
+                        <img src="images/events/whiteElephant4.jpg">
+                        <img src="images/events/whiteElephant5.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div id="event12">
+                <div class="event-title">
+                    <p>Fall Sports Events</p>
+                </div>
+                <div class="event-description">
+                     <p id="event-description-subtitle">
+                        Montaña de Oro
+                     </p>
+                     <p>
+                        &emsp;&emsp;CSA hosted an outing to Montaña de Oro State Park, which is famous for its beautiful hiking trails and beaches.
+                        Spending some time to unwind and take in these gorgeous views from the trails and beaches was a great way for members to
+                        bond and have a great time overall! Check out some photos from CSA’s time at the park below!<br><br><br>
+                     </p>
+                     <p id="event-description-subtitle">
+                        Kayaking
+                     </p>
+                     <p>
+                        &emsp;&emsp;CSA also hosted a kayaking excursion for members to enjoy, another great way for members to get some fresh air
+                           and enjoy SLO’s beautiful surroundings! Life jackets, kayaks, and paddles were all taken care of, members had a great
+                           time going out with kayaks! Check out some photos from the kayaking trip below!<br><br><br>
+                     </p>
+                     <div class="event-image-column1">
+                        <img src="images/events/mdo1.jpg">
+                        <img src="images/events/mdo2.jpg">
+                        <img src="images/events/mdo3.jpg">
+                        <img src="images/events/mdo4.jpg">
+                     </div>
+                     <div class="event-image-column2">
+                        <img src="images/events/kayaking1.jpg">
+                        <img src="images/events/kayaking2.jpg">
+                        <img src="images/events/kayaking3.jpg">
+                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="evententry-container2">
+            <div id="event5">
+                <div class="event-title">
+                    <p>Chinese New Year Banquet</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                     &emsp;&emsp;Chinese New Year Banquet is perhaps CSA’s biggest event of Winter Quarter! 
+                        It is a banquet that commemorates the Lunar New Year and Chinese culture that is open to anybody at all, 
+                        and is organized and hosted entirely by CSA members!<br><br>
+                     &emsp;&emsp;The night is filled with performances from CSA’s own Lion Dance Team, Take Out Kidz dance group, 
+                        and Harmonics a capella group (learn more about them in the “Groups” tab above)! We also have individual 
+                        performances from CSA members, guest performances from local performers of Wushu Tai Chi Center, and our 
+                        annual play that is written, directed, and performed by CSA members!<br><br>
+                     &emsp;&emsp;These performances run throughout the night for everybody to watch while they enjoy catered authentic 
+                        Chinese food and delicious treats from our event sponsor! This year’s CNYB was sponsored by Pocky and all of 
+                        our attendees got to enjoy plenty of Pocky throughout the night, courtesy of our sponsor!<br><br>
+                     &emsp;&emsp;Check out the photos of this year’s Chinese New Year Banquet below!<br><br>
+                    </p>
+                    <div class="event-image-column1">
+                        <img src="images/events/cnyb1.jpg">
+                        <img src="images/events/cnyb2.jpg">
+                        <img src="images/events/cnyb3.jpg">
+                        <img src="images/events/cnyb6.jpg">
+                        <img src="images/events/cnyb12.jpg">
+                        <img src="images/events/cnyb8.jpg">
+                        <img src="images/events/cnyb4.jpg">
+                        <img src="images/events/cnyb19.jpg">
+                        <img src="images/events/cnyb17.jpg">
+                        <img src="images/events/cnyb16.jpg">
+                     </div>
+                    <div class="event-image-column2">
+                        <img src="images/events/cnyb13.jpg">
+                        <img src="images/events/cnyb18.jpg">
+                        <img src="images/events/cnyb7.jpg">
+                        <img src="images/events/cnyb11.jpg">
+                        <img src="images/events/cnyb9.jpg">
+                        <img src="images/events/cnyb5.jpg">
+                        <img src="images/events/cnyb14.jpg">
+                        <img src="images/events/cnyb15.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div id="event10">
+                <div class="event-title">
+                    <p>Thanksgiving Banquet</p>
+                </div>
+                <div class="event-description">
+                    <p>
+                     &emsp;&emsp;CSA’s Thanksgiving Banquet is the first major event that Littles and Bigs attend together (see the “Bigs/Littles
+                        and Revealing” tab on the left for more information)! Our Thanksgiving Banquet is run potluck-style, meaning that each
+                        Big/Little pair signs up to bring a dish that they cook together before the event! This makes for a great way for Littles
+                        to bond with their newly revealed Bigs.<br><br>
+                     &emsp;&emsp;The night is also filled with performances from CSA’s own performing groups: Lion Dance Team, Take Out Kidz dance
+                        group, and Harmonics a capella group (learn more about them in the “Groups” tab above)! We also have individual performances
+                        from members as well!<br><br>
+                     &emsp;&emsp;There are also plenty of great photo opportunities for friends, Big/Little pairs, and our CSA families at the event!
+                        The family photos from Thanksgiving Banquet can be found in the “Families” tab at the top of this page.<br><br>
+                     &emsp;&emsp;Check out photos from this year’s Thanksgiving Banquet below!<br><br>
+                    </p>
+                    <div class="event-image-column1">
+                     <img src="images/events/tbanq13.jpg">
+                     <img src="images/events/tbanq16.jpg">
+                     <img src="images/events/tbanq18.jpg">
+                     <img src="images/events/tbanq1.jpg">
+                     <img src="images/events/tbanq3.jpg">
+                     <img src="images/events/tbanq20.jpg">
+                     <img src="images/events/tbanq5.jpg">
+                     <img src="images/events/tbanq7.jpg">
+                     <img src="images/events/tbanq11.jpg">
+                     <img src="images/events/tbanq12.jpg">
+                     
+                    </div>
+                    <div class="event-image-column2">
+                     <img src="images/events/tbanq14.jpg">
+                     <img src="images/events/tbanq15.jpg">
+                     <img src="images/events/tbanq17.jpg">
+                     <img src="images/events/tbanq2.jpg">
+                     <img src="images/events/tbanq19.jpg">
+                     <img src="images/events/tbanq4.jpg">
+                     <img src="images/events/tbanq6.jpg">
+                     <img src="images/events/tbanq8.jpg">
+                     <img src="images/events/tbanq9.jpg">
+                     <img src="images/events/tbanq10.jpg">
+                     
+                  </div>
+                </div>
+            </div>
+
+            <div id="event11">
+               <div class="event-title">
+                   <p>Bigs/Littles and Revealing</p>
+               </div>
+               <div class="event-description">
+                   <p>&emsp;&emsp;CSA’s Big and Little program is one of the most important parts of our organization. Every year, new joining CSA members
+                      become Littles when they are paired with, or are “picked up by,” veteran CSA members. These veteran members that they are paired with
+                      will become Bigs if it is their first time being paired with Littles. If they have picked up in previous years, they simply pick up
+                      more Littles if they choose to do so!<br><br>
+                    &emsp;&emsp;The lines of Bigs and Littles that can span over several years come together to form families. You can view CSA’s different
+                       families at the “Families” tab at the top of this page. As senior Bigs graduate, other Bigs in their line and families pick up more
+                       Littles and keep the family sizes strong!<br><br>
+                    &emsp;&emsp;The most exciting for many CSA members is the process of Passing and Revealing. Passing begins with CSA board secretly pairing
+                       future Bigs and Littles, and only telling the Bigs who their Littles are, but keeping everything a secret from Littles. Passing is
+                       generally a 3-week long process in which Bigs troll, drop subtle hints, and give gifts for their Littles while keeping their own identities
+                       secret.<br><br>
+                    &emsp;&emsp;At the end of Passing is Revealing, which is a day when Littles try to figure out who their Bigs are. At the end of the day,
+                       the Bigs reveal their identities and they are finally united with their Littles! This whole process is full of excitement and chaos for
+                       everyone and ends up bringing together Bigs and Little to form bonds that last for years on end.<br><br>
+                    &emsp;&emsp;Check out some photos from this year’s Revealing below!<br><br>
+                   </p>
+                   <div class="event-image-column1">
+                     <img src="images/events/revealing4.jpg">
+                     <img src="images/events/revealing1.jpg">
+                     <img src="images/events/revealing2.jpg">
+                     <img src="images/events/revealing6.jpg">
+                     <img src="images/events/revealing7.jpg">
+                     <img src="images/events/revealing9.jpg">
+                     <img src="images/events/revealing19.jpg">
+                     <img src="images/events/revealing10.jpg">
+                     <img src="images/events/revealing10.jpg">
+                     <img src="images/events/revealing8.jpg">
+                     <img src="images/events/revealing20.jpg">
+                  </div>
+                   <div class="event-image-column2">
+                     <img src="images/events/revealing5.jpg">
+                     <img src="images/events/revealing18.jpg">
+                     <img src="images/events/revealing3.jpg">
+                     <img src="images/events/revealing15.jpg">
+                     <img src="images/events/revealing12.jpg">
+                     <img src="images/events/revealing13.jpg">
+                     <img src="images/events/revealing14.jpg">
+                     <img src="images/events/revealing16.jpg">
+                     <img src="images/events/revealing17.jpg">
+                     <img src="images/events/revealing11.jpg">
+                   </div>
+               </div>
+            </div>
+
+         <div id="event13">
+            <div class="event-title">
+               <p>CultureFest</p>
+            </div>
+            <div class="event-description">
+               <p>
+               &emsp;&emsp;CultureFest is an annual celebration of culture at Cal Poly that takes place during Fall quarter. Many of the
+                  cultural clubs, including CSA, share a bit of the culture that they each represent with the school in a number
+                  of ways. <br><br>
+               &emsp;&emsp;For CSA, we shared our culture with others through our performing groups and food! CultureFest featured
+                  performances from CSA’s own Lion Dance Team, Take Out Kidz dance group, and Harmonics a cappella group (learn more
+                  about them in the “Groups” tab above)! CSA also sold Indomie noodles with egg and Spam add-ons for anyone to purchase
+                  and enjoy!<br><br>
+               &emsp;&emsp;<a target="_blank" href="https://deanofstudents.calpoly.edu/content/multicultural/cf/index">Click here to learn more about
+                  CultureFest.</a> And check out some photos from this year’s CultureFest below!<br><br>
+               </p>
+               <div class="event-image-column1">
+                  <img src="images/events/culturefest1.jpg">
+                  <img src="images/events/culturefest3.jpg">
+                  <img src="images/events/culturefest5.jpg">
+                  <img src="images/events/culturefest7.jpg">
+                  <img src="images/events/culturefest9.jpg">
+                  <img src="images/events/culturefest14.jpg">
+                  <img src="images/events/culturefest15.jpg">
+                  <img src="images/events/culturefest11.jpg">
+                  <img src="images/events/culturefest16.jpg">
+                  <img src="images/events/culturefest13.jpg">
+               </div>
+               <div class="event-image-column2">
+                  <img src="images/events/culturefest2.jpg">
+                  <img src="images/events/culturefest4.jpg">
+                  <img src="images/events/culturefest17.jpg">
+                  <img src="images/events/culturefest18.jpg">
+                  <img src="images/events/culturefest6.jpg">
+                  <img src="images/events/culturefest8.jpg">
+                  <img src="images/events/culturefest10.jpg">
+                  <img src="images/events/culturefest21.jpg">
+                  <img src="images/events/culturefest12.jpg">
+               </div>
+            </div>
+         </div>
+
+         <div id="event14">
+            <div class="event-title">
+               <p>Ultraman</p>
+            </div>
+            <div class="event-description">
+               <p>
+                  &emsp;&emsp;Ultraman is the first major event for new Littles to begin to really get familiar with CSA. Ultraman occurs very
+                     early on in the quarter and introduces Littles and new CSA members to the families of CSA.<br><br>
+                  &emsp;&emsp;Ultraman is a friendly Olympics-style competition that takes place between CSA’s many families, with each family
+                     represented by a different color theme. Because new CSA members and Littles have not yet been paired with families or Bigs,
+                     they are instead temporarily assigned to random families, so that they can become more familiar with their assigned family
+                     and the Bigs within it.<br><br>
+                  &emsp;&emsp;Everybody competes in a variety of games throughout the day at the beach, and one family eventually emerges
+                     victorious! Ultraman is a great way to get connected with CSA members, both returning and new.<br><br>
+                  &emsp;&emsp;Check out some photos from this year’s Ultraman below!<br><br>
+               </p>
+               <div class="event-image-column1">
+                  <img src="images/events/ultraman/ultraman21.jpg">
+                  <img src="images/events/ultraman/ultraman3.jpg">
+                  <img src="images/events/ultraman/ultraman5.jpg">
+                  <img src="images/events/ultraman/ultraman7.jpg">
+                  <img src="images/events/ultraman/ultraman9.jpg">
+                  <img src="images/events/ultraman/ultraman11.jpg">
+                  <img src="images/events/ultraman/ultraman13.jpg">
+                  <img src="images/events/ultraman/ultraman15.jpg">
+                  <img src="images/events/ultraman/ultraman17.jpg">
+                  <img src="images/events/ultraman/ultraman19.jpg">
+                  <img src="images/events/ultraman/ultraman22.jpg">
+                  <img src="images/events/ultraman/ultraman24.jpg">
+                  <img src="images/events/ultraman/ultraman23.jpg">
+                  <img src="images/events/ultraman/ultraman25.jpg">
+               </div>
+               <div class="event-image-column2">
+                  <img src="images/events/ultraman/ultraman1.jpg">
+                  <img src="images/events/ultraman/ultraman2.jpg">
+                  <img src="images/events/ultraman/ultraman4.jpg">
+                  <img src="images/events/ultraman/ultraman6.jpg">
+                  <img src="images/events/ultraman/ultraman8.jpg">
+                  <img src="images/events/ultraman/ultraman10.jpg">
+                  <img src="images/events/ultraman/ultraman12.jpg">
+                  <img src="images/events/ultraman/ultraman14.jpg">
+                  <img src="images/events/ultraman/ultraman16.jpg">
+                  <img src="images/events/ultraman/ultraman18.jpg">
+                  <img src="images/events/ultraman/ultraman20.jpg">
+               </div>
+            </div>
+         </div>
+
+         <div id="event15">
+            <div class="event-title">
+               <p>Meet & Greet and Bonfire</p>
+            </div>
+            <div class="event-description">
+               <p>
+                  &emsp;&emsp;CSA’s first events of the year are our Meet & Greet and our bonfire! These events are great for new members to
+                     meet other new members as well as veteran CSA members!<br><br>
+                  &emsp;&emsp;Our Meet & Greet takes place during the day on Dexter Lawn, a popular spot for gatherings on campus. Various
+                     activities are held and everybody has the opportunity to mingle and meet with tons of new people.<br><br>
+                  &emsp;&emsp;Later in the day, CSA brings members to a nearby beach for a bonfire event! The bonfire is another great
+                     opportunity to meet new people, and has tons of great music and campfire snacks, such as s’mores!<br><br>
+                  &emsp;&emsp;Check out some photos from this year’s Meet & Greet and bonfire below!<br><br>
+               </p>
+               <div class="event-image-column1">
+                  <img src="images/events/meetgreet/meetgreet1.jpg">
+                  <img src="images/events/meetgreet/meetgreet2.jpg">
+                  <img src="images/events/meetgreet/meetgreet8.jpg">
+                  <img src="images/events/meetgreet/meetgreet3.jpg">
+                  <img src="images/events/meetgreet/meetgreet10.jpg">
+                  <img src="images/events/bonfire/bonfire1.jpg">
+                  <img src="images/events/bonfire/bonfire2.jpg">
+                  <img src="images/events/bonfire/bonfire3.jpg">
+                  <img src="images/events/bonfire/bonfire4.jpg">
+                  <img src="images/events/bonfire/bonfire9.jpg">
+                  <img src="images/events/bonfire/bonfire10.jpg">
+               </div>
+               <div class="event-image-column2">
+                  <img src="images/events/meetgreet/meetgreet4.jpg">
+                  <img src="images/events/meetgreet/meetgreet5.jpg">
+                  <img src="images/events/meetgreet/meetgreet9.jpg">
+                  <img src="images/events/meetgreet/meetgreet7.jpg">
+                  <img src="images/events/meetgreet/meetgreet6.jpg">
+                  <img src="images/events/meetgreet/meetgreet11.jpg">
+                  <img src="images/events/bonfire/bonfire5.jpg">
+                  <img src="images/events/bonfire/bonfire6.jpg">
+                  <img src="images/events/bonfire/bonfire7.jpg">
+                  <img src="images/events/bonfire/bonfire8.jpg">
+                  <img src="images/events/bonfire/bonfire11.jpg">
+               </div>
+            </div>
+         </div>
+
+      </div>
+
+    </section>
+    <div id="footer"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="index.js"></script>
+<script src="expanding-grid.js"></script>
+</html>

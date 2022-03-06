@@ -1,0 +1,217 @@
+
+.board-section {
+    width: 100vw;
+    padding-bottom: 100px;
+    /*background: url(../images/backgrounds/celestial-background.jpg);*/
+
+    background-size: 130% 100%;
+    min-height: 100vh;
+}
+
+.grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "header header header header" 
+    "checked checked checked checked"
+    "checked checked checked checked"
+}
+ .grid-box:not(.checked) img:hover {
+        -webkit-filter: brightness(130%);
+                 -webkit-transition: all 0.5s ease;
+
+   filter: brightness(130%);
+   background-color: #000000;
+    }
+/*
+ .grid-box .checked img:hover{
+         -webkit-filter: brightness(60%);
+                 -webkit-transition: all 0.5s ease;
+
+   filter: brightness(60%);
+   background-color: #000000;
+    }*/
+
+
+.grid-box img{
+    background: url('../images/loading.gif') no-repeat;
+    border-radius:10px;
+}
+
+.grid-box.checked {
+    grid-area: checked;
+    grid-template-columns: 50%;   
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: "image header"
+    "image info";
+    max-height: 425.5px;
+    height: 45vw;
+}
+
+.grid-box.checked img {
+    height: 40vw;
+    max-height: 375px;
+    max-width: 400px;
+}
+
+.header b {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.header p {
+    font-size: 0.5em;
+    font-weight: lighter;
+    line-height: 30px;
+}
+
+.info b {
+    line-height: 180%;
+}
+
+.info p {
+    font-weight: light;
+    font-size: 0.9em;
+}
+
+position {
+    display: block;
+    font-size: 0.6em;
+    font-weight: light;
+    line-height: 8px;
+    top: 100px;
+    margin-top: 10px;
+}
+
+.page-title{
+    color: #B5381C;
+    text-align: center;
+    margin-left: -6%;
+}
+
+.board-info{
+    font-family: "proxima-nova", sans-serif;
+    font-size: 1.0em;
+    line-height: 25px;
+}
+
+.title{
+    font-size: 1.0em;
+    line-height: 35px;
+}
+
+.major-year{
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 945px) {
+    .header b {
+        font-size: 4vw;
+    }
+
+    .header p {
+        font-size: 1.5vw;
+        line-height: 4vw;
+    }
+
+    .info p {
+        font-size: 1.5vw;
+    }
+
+    position {
+        font-size: 2.5vw;
+        line-height: 1vw;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "header header header" 
+        "checked checked checked"
+        "checked checked checked"
+        "checked checked checked"
+        "checked checked checked";
+        grid-gap: 2vw;
+    }
+
+    .grid-box {
+        height: 29.5vw; 
+    }
+
+    .grid-box.checked {
+        height: auto;
+        max-height: none;
+        grid-template-columns: 100%;
+        grid-template-rows: 86.5vw 24vw;
+        grid-template-areas: "image" "header" "info";
+    }
+
+    .grid-box.checked img {
+        width: 90%;
+        height: auto;
+        max-height: none;
+        align-self: flex-end;
+    }
+
+    .grid-box img {
+        height: 25vw;
+    }
+
+    .hidden b, .hidden position, .hidden p{
+        font-size: 0 !important;
+    }
+    .header b {
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+
+    .header p {
+        font-size: 3vw;
+        padding-bottom: 2vw;
+    }
+
+    position {
+        font-size: 4vw;
+        line-height: 3vw;
+    }
+
+    .info {
+        padding-left: 4vw;
+        padding-bottom: 4vw;
+    }
+    .info p {
+        font-size: 3vw;
+    }
+}
+
+
+/*new css*/
+
+.board-photo{
+    margin-left: 5%; 
+    margin-top: 5%;
+}
+.board-module-container{
+    width: 96%; margin-left: 4%; color: #B5381C; 
+}
+.board-member-container{
+    width: 25%; padding: 3%; float: left;
+    height: 930px;
+    border-color: #B5381C;
+    border: 0.2vw;
+    border-width: 3px;
+    border-style: solid;
+    margin: 8px 8px 8px 0px;
+    border-radius: 15px;
+}
+.board-member-container2{
+    width: 25%; padding: 3%; float: left;
+}
+
+@media screen and (max-width: 945px) {
+    .board-member-container{
+        width: 90%; padding: 5% 5%; float: left;
+        height: auto;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/fams.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section flexbox flex-align-center groups" style="margin-bottom: 3%; width: 90%; max-height: 3000px;">
+        <div class="spacer"></div>
+       
+        <div id="fam-container1">
+            <div id="event0">
+                <div class="fam-title">
+                    <h1>Chin Dynasty</h1>
+                </div>
+                <div class="fam-description">
+                  <p>
+                    Chin is the BEST fam that loves to go on wholesome outings like picnics, dinner get-togethers, and do holiday celebrations! Chin has tons of events each quarter where we all make some great memories.
+                    <br><br>
+                    </p>
+                   <div >
+                      <img src="images/Families/chin.jpg"  class="fam-pic"></img>
+                   </div>
+                   
+            </div>
+            </div>
+            </div>
+          
+    </section>
+    
+    <section class="info-section-fams flexbox flex-align-center groups">
+        <div> </div>
+        <div style="position:relative">
+            <h1 class="meet-fam-heads">Meet the Fam Heads!</h1>
+        </div>
+        <div class="spacer"></div>
+
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">Kyle Liang</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/kyle.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    I am a 4th year Civil Engineering major from Sacramento, CA.  I really enjoy dancing, playing guitar/ukulele, tennis, and trying new things!  I am super passionate about the things that I do and I always try to make the best of whatever I'm doing.
+                </p>
+
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">Valerie Choi</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/valerie.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    Hi! My name is Valerie and I am a third-year Business Administration major double concentrating in Accounting and Information Systems and minoring in Graphic Communication. In my free time, I like to take frequent naps, watch k-dramas/anime, eat good food with friends, and annoy my cat, Honey! (ﾉ^ヮ^)ﾉ*:・ﾟ✧
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/expanding-grid.js"></script>
+</html>

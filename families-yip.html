@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/fams.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section flexbox flex-align-center groups" style="margin-bottom: 3%; width: 90%; max-height: 3000px;">
+        <div class="spacer"></div>
+       
+        <div id="fam-container1">
+            <div id="event0">
+                <div class="fam-title">
+                    <h1>Yip Dynasty</h1>
+                </div>
+                <div class="fam-description">
+                  <p>
+                    Laid-back, not afraid to have a good time, plus a dash of spontaneity. We are known for our game nights. Appa is our mascot, Yip Yip!                  <br><br>
+                    </p>
+                   <div >
+                      <img src="images/Families/yip.jpg" width="90%" height="auto" class="fam-pic"></img>
+                   </div>
+                   
+            </div>
+            </div>
+            </div>
+          
+    </section>
+    
+    <section class="info-section-fams flexbox flex-align-center groups">
+        <div> </div>
+        <div style="position:relative">
+            <h1 class="meet-fam-heads">Meet the Fam Heads!</h1>
+        </div>
+        <div class="spacer"></div>
+
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">Rocco Costanzo</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/rocco.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    I am a 4th Year Statistics Major from San Francisco, CA! I love everything music, strategy games, random YouTube binges, and have a healthy caffeine addiction. I was CSA's president last year! <br><br>
+                </p>
+
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">Thea Yang</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/thea.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    I'm a third year Statistics major minoring in Data Science! I'm from San Francisco and I love cooking, traveling, and playing lots of Mario Kart! <br><br>               
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div id="footer"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/expanding-grid.js"></script>
+</html>

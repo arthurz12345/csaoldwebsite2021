@@ -1,0 +1,52 @@
+#error-message {
+    color: red;
+    display: none;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+#code-prompt {
+    display: block;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+
+.submit {
+    background-color: blue;
+    cursor: pointer;
+    display: flex;
+}
+
+#puzzles-title {
+    /* display: none; */
+}
+
+#puzzles {
+    /* display: none; */
+    margin: 20px 0 10px 0;
+}
+
+.puzzle-link {
+    font-size: 22px;
+    width: 200px;
+}
+
+.spacer {
+    height: 40px;
+}
+
+#footer {
+    position: fixed;
+}
+
+@media only screen and (max-width: 900px) { 
+    #footer {
+        position: relative;
+    }
+}
+
+@media only screen and (max-height: 900px) { 
+    #footer {
+        position: relative;
+    }
+}

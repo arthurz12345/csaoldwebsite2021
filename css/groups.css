@@ -1,0 +1,58 @@
+.groups {
+    background-color: #FDF7E0;
+}
+.spacer {
+    height: 100px;
+}
+
+.exlink p:hover{
+    font-weight: bold;
+}
+
+.info-content-box iframe {
+    grid-area: video;
+    padding: 20px;
+    width: 91%;
+    height: 250px;
+}
+
+.event-body {
+    font-family: 'proxima-nova', sans-serif;
+}
+
+.info-content-box {
+    border-radius: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1.8fr;
+    grid-template-areas: "header header header header"
+     "image image image info" 
+     "last last last last";
+}
+
+.info-content-box p {
+    font-size: 19px;
+}
+
+.last {
+    grid-area: last;
+    text-align: left;
+}
+
+@media screen and (max-width: 660px) {
+    .spacer {
+        height: 50px;
+    }
+
+    .info-content-box {
+        grid-template-columns: 100%;
+        grid-template-areas: "header" "image" "info" "last" "video";
+    }
+
+    .times {
+        padding: 0;
+        margin: 4vw;
+    }
+
+    .info-content-box iframe {
+        width: 91vw;
+    }
+}

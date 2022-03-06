@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/board.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/groups.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    <script src="scripts/events.js"></script>
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section-events flexbox flex-align-center groups" >
+
+        <div id="evententry-container1">
+            <div id="event0">
+
+                <div class="event-description">
+
+                    <h1 class="big-title">General Meetings</h1>
+                  <p class="event-body">
+                    CSA has general meetings every Tuesday at 8 pm! Anybody is welcome to attend our meetings, so come out and have a good time!
+                    <br><br>
+                    At general meetings, we keep you up to date with CSA’s upcoming events, we play fun icebreaker games that anyone can participate in, and more! General meetings are also a great way to meet new people in the club and to get hyped for things that are in store for the club in the coming weeks!
+                    <br><br>
+                    </p>
+                    
+                    <div class="event-image-column1">
+                        <img src="images/events/generalmeeting1.jpg"/>
+                        <img src="images/events/generalmeeting2.jpg"/>
+                        <img src="images/events/generalmeeting3.jpg"/>
+                        <img src="images/events/generalmeeting4.jpg"/>
+                    </div>
+                    <div class="event-image-column2">
+                        <img src="images/events/generalmeeting5.jpg"/>
+                        <img src="images/events/generalmeeting6.jpg"/>
+                        <img src="images/events/generalmeeting7.jpg"/>
+                        <img src="images/events/generalmeeting8.jpg"/>
+                        
+                    </div>
+                    
+               </div>
+            </div>
+
+        </section>
+        <div id="footer"></div>
+    
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/expanding-grid.js"></script>
+    </html>

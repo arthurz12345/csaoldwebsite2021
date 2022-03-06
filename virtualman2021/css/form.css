@@ -1,0 +1,41 @@
+input[type=text] {
+    border: solid rgba(128, 128, 128, .2) 4px;
+    border-radius: 10px;
+    cursor: auto;
+    font-size: 20px;
+    height: 100%;
+    margin-right: 10px;
+    padding: 10px;
+    width: 220px;
+}
+
+input[type=text]:hover {
+    border: solid rgba(128, 128, 128, .8) 4px;
+}
+
+input[type=text]:focus {
+    border: solid rgba(128, 128, 128, .8) 4px;
+}
+
+input[type=button] {
+    background-color:  rgba(47, 224, 160, 1);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 60px;
+}
+
+input[type=button]:hover {
+    background-color: rgba(30, 200, 137, 1);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 512px) {
+    input[type=text] {
+        margin-left: -70px;
+        width: 180px;
+    }
+}

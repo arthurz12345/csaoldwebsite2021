@@ -1,0 +1,153 @@
+
+.family-section {
+    width: 100vw;
+    background-size: 130% 100%;
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+.grid-container {
+    grid-template-areas: "header header header" 
+    "checked checked checked"
+    "checked checked checked"
+    "main main main";
+}
+
+.grid-box img{
+    background: url('../images/loading.gif') no-repeat;
+        border-radius: 10px;
+
+}
+.fam-page-title {
+    height: 10vw;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 8vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    font-size: 3.5vw;
+    text-align: center;
+    font-weight: lighter;
+  /*  box-shadow: 6px 6px 5px -6px;  
+    background-color: rgba(255, 255, 255, 0.9);*/
+    text-align: center;
+    border-radius: 2px;
+    align-self: flex-end;
+    padding-top: 20px;
+    font-weight: bold;
+    color: #B5381C;
+}
+
+.fam-picture-container{
+    width: 29%;
+    margin: 2% 2% 2% 2%;
+    float: left;
+    
+}
+
+
+.grid-box.checked img {
+    align-self: flex-start;
+    width: 91%;
+    height: auto;
+}
+
+.grid-box.checked {
+    grid-template-rows: 50px 395px;
+    grid-template-areas: "header" "image";
+    width: 600px;
+    height: auto;
+    max-height: none;
+    justify-self: center;
+}
+ .grid-box:not(.checked) img:hover {
+
+    -webkit-filter: brightness(130%);
+                 -webkit-transition: all 0.5s ease;
+
+   filter: brightness(130%);
+   background-color: #000000;
+    }
+
+@media screen and (max-width: 1400px) {
+    .fam-page-title {
+        height: 50px;
+        margin: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        text-align: center;
+        font-weight: lighter;  
+        text-align: center;
+        border-radius: 2px;
+        align-self: flex-end;
+        padding-top: 20px;
+        font-weight: bold;
+        color: #B5381C;
+    }
+    
+} 
+
+@media screen and (max-width: 500px) {
+
+    .fam-page-title{
+        margin-top: -30px;
+        font-size: 1.5em;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header header"
+        "checked checked"
+        "checked checked";
+    }
+
+    .grid-box.checked {
+        height: auto;
+        width: 100%;
+        max-height: none;
+        grid-template-rows: 10vw 59vw;
+        grid-template-areas: "header" "image";
+    }
+
+    .grid-box.checked img {
+        align-self: start;
+        width: 90%;
+        height: auto;
+        max-height: none;
+    }
+
+    .header b {
+        font-size: 7vw;
+        font-weight: 600;
+    }
+
+    .grid-box img {
+        width: 25vw;
+         -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+    }
+
+  
+
+    .grid-box {
+        height: 30vw;
+    }
+
+    .grid-box img {
+        width: 85%;
+        height: auto;
+    }
+}

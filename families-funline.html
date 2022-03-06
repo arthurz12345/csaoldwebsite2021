@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cal Poly CSA</title>
+    <link rel="icon" href="images/panda-head.png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/events.css" rel="stylesheet">
+    <link href="css/expanding-grid.css" rel="stylesheet">
+    <link href="css/fams.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://use.typekit.net/qhy8hmx.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126227002-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-126227002-1');
+    </script>
+    
+    <!-- Start: Dynamically load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $("#navbar").load("include/header.html"); 
+          $("#footer").load("include/footer.html"); 
+        });
+    </script>
+    <!--End-->
+    
+</head>
+<body>
+    <nav id="navbar">
+        
+    </nav>
+
+    <section class="info-section flexbox flex-align-center groups" style="margin-bottom: 3%; width: 90%; max-height: 3000px;">
+        <div class="spacer"></div>
+       
+        <div id="fam-container1">
+            <div>
+                <div class="fam-title">
+                    <h1>Funline</h1>
+                </div>
+                <div class="fam-description">
+                  <p>
+                    Funline is a family of creative minds and chill vibes. We support each others passions and we strive to bring out the best in each and every one of us. Most importantly we are always here for a fun time!<br><br><br><br>
+                </p>
+                   <div >
+                      <img src="images/Families/funline.jpg" class="fam-pic"></img>
+                   </div>
+                   
+            </div>
+            </div>
+            </div>
+          
+    </section>
+    <section class="info-section-fams flexbox flex-align-center groups">
+        <div> </div>
+        <div style="position:relative">
+            <h1 class="meet-fam-heads">Meet the Fam Heads!</h1>
+        </div>
+        <div class="spacer"></div>
+
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">Koichi Kodama</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/koichi.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    My name is Koichi Kodama and I am from Oakland, CA. I am 4th year LAES Major concentrating in usability studies and art! In my free time I like to play games, draw, cook, and stream!<br><br><br><br>
+                </p>
+
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="flex-container">
+            <div class="head-name">
+                <h3 style="font-size: 1.0em;">John Ty</h3>
+            </div>
+            <div class="fam-pic-container">
+                <img src="images/fam-heads/john.jpg" class="fam-head-pic">
+            </div>
+            <div class="fam-head-text">
+                <p class="fam-head-paragraph">
+                    Hi my name is John Ty, a 4th year landscape architecture major. My life is surrounded by music and art. I love beatboxing and recording song covers, and am always looking for an excuse to draw. I am a self-proclaimed casual weeb and casual gamer, and I love being around people. :)<br><br>
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/expanding-grid.js"></script>
+</html>
